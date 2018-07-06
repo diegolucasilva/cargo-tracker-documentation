@@ -1,10 +1,12 @@
-# Summary
+# Table of contents
 
-* [Getting Started](getting-started/getting-started.md)
-* [Background](background/background.md)
-* [Build Instructions](background/background.md)
-* [Java EE & DDD](javaee-ddd/javaee-ddd.md)
-* [Characterization](characterization/characterization.md)
-* [Layers](architecture/layers.md)
-* [Java EE Features](javaee-features/javaee-features.md)
-* [Resources](resources/resources.md)
+* [Introduction](README.md)
+* [Getting Started](getting-started.md)
+* [Background](background.md)
+* [Build Instructions](build-instructions.md)
+* [Java EE & DDD](java-ee-and-ddd.md)
+* [Characterization](characterization.md)
+* [Layers](layers.md)
+* [Java EE Features](java-ee-features.md)
+* [Resources](resources.md)
+
