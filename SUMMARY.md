@@ -1,6 +1,5 @@
 # Summary
 
-* [General Info](overview/overview.md)
 * [Getting Started](getting-started/getting-started.md)
 * [Background](background/background.md)
 * [Build Instructions](background/background.md)
