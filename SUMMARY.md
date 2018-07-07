@@ -1,7 +1,6 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [Background](background.md)
 * [Build Instructions](build-instructions.md)
 * [Java EE & DDD](java-ee-and-ddd.md)
 * [Characterization](characterization.md)
