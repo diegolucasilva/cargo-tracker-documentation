@@ -1,4 +1,4 @@
-# Java EE & DDD
+# Java EE and DDD
 
 As the name implies, Domain-Driven Design is an approach to software design and development that focuses on the core domain and domain logic. The domain is implemented through a careful focus on traditional OOAD \(Object Oriented Analysis and Design\) and modeling the real world problem the software is trying to solve as closely as possible.
 
