@@ -12,8 +12,7 @@ The project is Maven based, so you should be able to easily build it or set it u
 
 You can also run the application directly from the Maven command line using Apache Cargo. All you need to is navigate to the project source root and type:
 
- `mvn package cargo:run`  
-
+ `mvn package cargo:run`
 
 Once the application starts up, just open up a browser and navigate to [http://localhost:8080/cargo-tracker/](http://localhost:8080/cargo-tracker/).
 
