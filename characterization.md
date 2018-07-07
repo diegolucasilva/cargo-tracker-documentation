@@ -30,13 +30,13 @@ Value Objects are typically implemented as JPA embedded objects. However, it is 
 
 ## Domain Events
 
-Some things clearly have identity but no life-cycle, or an extremely limited life-cycle with just one state. We call these things Domain Events and they can be viewed as hybrid of Entities and Value Objects. In our application [HandlingEvent](http://java.net/projects/cargotracker/sources/svn/content/src/main/java/net/java/cargotracker/domain/model/handling/HandlingEvent.java) is a Domain Event that represent a real-life event such as cargo being loaded or unloaded, customs cleared etc. They carry both a completion time and a registration time. The completion time is the time when the event occurred and the registration time is the time when the event was received by the system. The handling event id is composed of the cargo, voyage, completion time, location and type \(LOAD, UNLOAD etc\).
+Some things clearly have identity but no life-cycle, or an extremely limited life-cycle with just one state. We call these things Domain Events and they can be viewed as hybrid of Entities and Value Objects. In our application [HandlingEvent](https://github.com/m-reza-rahman/cargo-tracker/blob/master/src/main/java/net/java/cargotracker/domain/model/handling/HandlingEvent.java) is a Domain Event that represent a real-life event such as cargo being loaded or unloaded, customs cleared etc. They carry both a completion time and a registration time. The completion time is the time when the event occurred and the registration time is the time when the event was received by the system. The handling event id is composed of the cargo, voyage, completion time, location and type \(LOAD, UNLOAD etc\).
 
-![handling event](.gitbook/assets/handling_event.png)
+![](.gitbook/assets/handling_event.png)
 
 Domain Events are usually implemented as JPA entities.
 
-== Aggregates
+## Aggregates
 
 In real life most things are connected, directly or indirectly. Mimicking this approach when building large software systems tends to bring unnecessary complexity and poor performance. DDD provides tactics to help you sort these things out, aggregates being one of the most important ones. Aggregates help with decoupling of large structures by setting rules for relations between entities. An aggregate is essentially a vey closely related set of entities and value objects. An aggregate root is a special kind of entity in the aggregate that controls external access to the set of closely related entities and value objects.
 
