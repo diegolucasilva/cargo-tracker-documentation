@@ -78,7 +78,7 @@ On the other hand, if the service can be implemented strictly using the domain l
 
 Application services represent the high level business operations for the system and constitute the application layer. They provide a high-level abstraction for clients to use when interacting with the domain. The [net.java.cargotracker.application](https://github.com/m-reza-rahman/cargo-tracker/tree/master/src/main/java/net/java/cargotracker/application) package container all the services for the application such as [BookingService](https://github.com/m-reza-rahman/cargo-tracker/blob/master/src/main/java/net/java/cargotracker/application/BookingService.java) and [HandlingEventService](https://github.com/m-reza-rahman/cargo-tracker/blob/master/src/main/java/net/java/cargotracker/application/HandlingEventService.java). The application services are a natural place to apply concerns such as pooling, transactions and security. This is why application services are typically implemented using EJB or transactional CDI beans.
 
-![booking service](.gitbook/assets/booking_service.png)
+![](.gitbook/assets/booking_service.png)
 
 In some situations, e.g. when dealing with graphs of lazy-loaded domain objects or when passing services' return values over network boundaries, the services are wrapped in facades. The facades handle ORM session management issues and/or convert the domain objects to more portable Data Transfer Objects that can be tailored to specific use cases. In that case, we consider the DTO-serializing facade part of the interfaces layer. See [BookingServiceFacade](https://github.com/m-reza-rahman/cargo-tracker/blob/master/src/main/java/net/java/cargotracker/interfaces/booking/facade/BookingServiceFacade.java) for an example.
 
