@@ -50,17 +50,17 @@ The main reason for not making handling event part of the cargo aggregate is per
 
 ## Repositories
 
-With the aggregates and their roots identified it is fairly trivial to identify the Repositories. Repositories retrieve and save aggregate roots from and to persistent storage. In our application there is one Repository per aggregate root. For example, the [CargoRepository](http://java.net/projects/cargotracker/sources/svn/content/src/main/java/net/java/cargotracker/domain/model/cargo/CargoRepository.java) is responsible for finding and storing cargo aggregates. The finders return Cargo instances or lists of Cargo instances.
+With the aggregates and their roots identified it is fairly trivial to identify the Repositories. Repositories retrieve and save aggregate roots from and to persistent storage. In our application there is one Repository per aggregate root. For example, the [CargoRepository](https://github.com/m-reza-rahman/cargo-tracker/blob/master/src/main/java/net/java/cargotracker/domain/model/cargo/CargoRepository.java) is responsible for finding and storing cargo aggregates. The finders return Cargo instances or lists of Cargo instances.
 
-![repository](.gitbook/assets/cargo_repository.png)
+![](.gitbook/assets/cargo_repository.png)
 
-While Repository interfaces are part of the domain layer, their implementations are part of the infrastructure layer. For example the CargoRepository has JPA implementation in the infrastructure layer, [JpaCargoRepository](http://java.net/projects/cargotracker/sources/svn/content/src/main/java/net/java/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java).
+While Repository interfaces are part of the domain layer, their implementations are part of the infrastructure layer. For example the CargoRepository has JPA implementation in the infrastructure layer, [JpaCargoRepository](https://github.com/m-reza-rahman/cargo-tracker/blob/master/src/main/java/net/java/cargotracker/infrastructure/persistence/jpa/JpaCargoRepository.java).
 
-Repositories in Java EE are typically implemented using JPA and CDI.
+Repositories in Java EE are typically implemented using JPA and CDI. The DeltaSpike Data module is particularly helpful in implementing repositories. 
 
 ## Factories
 
-In some cases creating entities are not as trivial as simply calling the new operator. In such cases, you will want to encapsulate entity creation using Factories. In our application, [HandlingEventFactory](http://java.net/projects/cargotracker/sources/svn/content/src/main/java/net/java/cargotracker/domain/model/handling/HandlingEventFactory.java) is used to create handling events.
+In some cases creating entities are not as trivial as simply calling the new operator. In such cases, you will want to encapsulate entity creation using Factories. In our application, [HandlingEventFactory](https://github.com/m-reza-rahman/cargo-tracker/blob/master/src/main/java/net/java/cargotracker/domain/model/handling/HandlingEventFactory.java) is used to create handling events.
 
 Factories are typically implemented using CDI.
 
@@ -68,17 +68,17 @@ Factories are typically implemented using CDI.
 
 Domain services encapsulate key domain concepts that just are not naturally modeled as things. However, domain service method arguments and the return values are usually domain classes. Sometimes only the service interface \(what the service does\) is part of the domain layer, but the implementation \(how the service does it\) is part of the infrastructure layer. This is analogous to how repository interfaces are part of the domain layer, but the JPA implementations are not.
 
-A good example of that is the [RoutingService](http://java.net/projects/cargotracker/sources/svn/content/src/main/java/net/java/cargotracker/domain/service/RoutingService.java), which provides access to the routing system and is used to find possible routes for a given specification. The implementation, [ExternalRoutingService](http://java.net/projects/cargotracker/sources/svn/content/src/main/java/net/java/cargotracker/infrastructure/routing/ExternalRoutingService.java), communicates with another system and translates to/from an external API/data model in the infrastructure layer.
+A good example of that is the [RoutingService](https://github.com/m-reza-rahman/cargo-tracker/blob/master/src/main/java/net/java/cargotracker/domain/service/RoutingService.java), which provides access to the routing system and is used to find possible routes for a given specification. The implementation, [ExternalRoutingService](https://github.com/m-reza-rahman/cargo-tracker/blob/master/src/main/java/net/java/cargotracker/infrastructure/routing/ExternalRoutingService.java), communicates with another system and translates to/from an external API/data model in the infrastructure layer.
 
-![routing service](.gitbook/assets/routing_service.png)
+![](.gitbook/assets/routing_service.png)
 
 On the other hand, if the service can be implemented strictly using the domain layer, both the interface and the implementation could be part of the domain layer.
 
 ## Application Services
 
-Application services represent the high level business operations for the system and constitute the application layer. They provide a high-level abstraction for clients to use when interacting with the domain. The [net.java.cargotracker.application](http://java.net/projects/cargotracker/sources/svn/show/src/main/java/net/java/cargotracker/application) package container all the services for the application such as [BookingService](http://java.net/projects/cargotracker/sources/svn/content/src/main/java/net/java/cargotracker/application/BookingService.java) and [HandlingEventService](http://java.net/projects/cargotracker/sources/svn/content/src/main/java/net/java/cargotracker/application/HandlingEventService.java). The application services are a natural place to apply concerns such as pooling, transactions and security. This is why application services are typically implemented using EJB or transactional CDI beans.
+Application services represent the high level business operations for the system and constitute the application layer. They provide a high-level abstraction for clients to use when interacting with the domain. The [net.java.cargotracker.application](https://github.com/m-reza-rahman/cargo-tracker/tree/master/src/main/java/net/java/cargotracker/application) package container all the services for the application such as [BookingService](https://github.com/m-reza-rahman/cargo-tracker/blob/master/src/main/java/net/java/cargotracker/application/BookingService.java) and [HandlingEventService](https://github.com/m-reza-rahman/cargo-tracker/blob/master/src/main/java/net/java/cargotracker/application/HandlingEventService.java). The application services are a natural place to apply concerns such as pooling, transactions and security. This is why application services are typically implemented using EJB or transactional CDI beans.
 
 ![booking service](.gitbook/assets/booking_service.png)
 
-In some situations, e.g. when dealing with graphs of lazy-loaded domain objects or when passing services' return values over network boundaries, the services are wrapped in facades. The facades handle ORM session management issues and/or convert the domain objects to more portable Data Transfer Objects that can be tailored to specific use cases. In that case, we consider the DTO-serializing facade part of the interfaces layer. See [BookingServiceFacade](http://java.net/projects/cargotracker/sources/svn/content/src/main/java/net/java/cargotracker/interfaces/booking/facade/BookingServiceFacade.java) for an example.
+In some situations, e.g. when dealing with graphs of lazy-loaded domain objects or when passing services' return values over network boundaries, the services are wrapped in facades. The facades handle ORM session management issues and/or convert the domain objects to more portable Data Transfer Objects that can be tailored to specific use cases. In that case, we consider the DTO-serializing facade part of the interfaces layer. See [BookingServiceFacade](https://github.com/m-reza-rahman/cargo-tracker/blob/master/src/main/java/net/java/cargotracker/interfaces/booking/facade/BookingServiceFacade.java) for an example.
 
