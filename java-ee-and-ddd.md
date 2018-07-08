@@ -4,5 +4,5 @@ As the name implies, Domain-Driven Design is an approach to software design and 
 
 The basic building blocks of the domain are entities, value objects, aggregates, services, repositories and factories. The Characterization section overviews how these concepts are implemented in the application using Java EE. Logical layers partitioning distinct concerns are super-imposed on the core concept of the domain. These layers generally consist of the UI/interface layer, the application layer, the domain layer \(of course!\) and the infrastructure layer respectively. The Layers section explains the architectural layers in the application and how they relate to various Java EE APIs.
 
-![Alt text](.gitbook/assets/ddd-diagram.png)
+![](.gitbook/assets/ddd-diagram.png)
 
