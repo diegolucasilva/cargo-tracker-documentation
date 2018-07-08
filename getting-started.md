@@ -6,6 +6,8 @@ Before exploring the code, it may be helpful to view a demo of the application f
 
 ## Exploring the Code
 
+All of the code is available on GitHub. You can [download it as a zip](https://github.com/m-reza-rahman/cargo-tracker/archive/master.zip) or [browse the repository online](https://github.com/m-reza-rahman/cargo-tracker/).
+
 ## Running the Application
 
 The project is Maven based, so you should be able to easily build it or set it up in your favorite IDE. We currently have instructions for NetBeans.
