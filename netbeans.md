@@ -14,7 +14,7 @@ This section outlines how to set up the application in NetBeans.
 
 ## NetBeans Setup
 
-Start NetBeans, you will first need to configure GlassFish 4.x. Go in the _'Services'_ tab, right click _'Servers'_ and hit _'Add Server'_.
+Start NetBeans, you will first need to configure Payara. Go in the _'Services'_ tab, right click _'Servers'_ and hit _'Add Server'_.
 
 ![ ](.gitbook/assets/nb_step1.png)
 
@@ -22,7 +22,7 @@ On the _'Add Server Instance'_ dialog, choose GlassFish and give the instance a 
 
 ![ ](.gitbook/assets/nb_step2.png)
 
-Point the _'Installation Location'_ to where you have GlassFish 4.x installed on your file system. Hit _'Next'_. On the _'Domain Location'_ screen, accept the defaults and hit _'Finish'_.
+Point the _'Installation Location'_ to where you have Payara installed on your file system \(typically the install is just the Payara download unzipped\). Hit _'Next'_. On the _'Domain Location'_ screen, accept the defaults and hit _'Finish'_.
 
 ![ ](.gitbook/assets/nb_step3.png)
 
@@ -38,11 +38,11 @@ After the project builds, you are now ready to run it.
 
 ![ ](.gitbook/assets/nb_step6.png)
 
-You will now need to associate the Cargo Tracker project with GlassFish 4.x. To do this, right-click the project and select _'Properties'_. Then select _'Run'_. Select the GlassFish instance you just created as the _'Server'_, make sure the _'Context Path'_ is set to _'/cargo-tracker'_, accept the rest of the defaults and hit _'OK'_. It might take a bit to save the project data.
+You will now need to associate the Cargo Tracker project with Payara. To do this, right-click the project and select _'Properties'_. Then select _'Run'_. Select the Payara instance you just created as the _'Server'_, make sure the _'Context Path'_ is set to _'/cargo-tracker'_, accept the rest of the defaults and hit _'OK'_. It might take a bit to save the project data.
 
 ![ ](.gitbook/assets/nb_step7.png)
 
-You are now ready to run the application. Right click on the project and hit _'Run'_. The first time startup might take a bit of time. After GlassFish starts, NetBeans should open up a browser window with the application.
+You are now ready to run the application. Right click on the project and hit _'Run'_. The first time startup might take a bit of time. After Payara starts, NetBeans should open up a browser window with the application.
 
-There is a tracking interface to track the current status of cargo and a booking interface to book and route cargo. You should explore both interfaces before diving into the code. You should also check out the [REST](https://java.net/projects/cargotracker/sources/svn/content/tags/1.0/src/main/java/net/java/cargotracker/interfaces/handling/rest/HandlingReportService.java) and [file processing](https://java.net/projects/cargotracker/sources/svn/content/tags/1.0/src/main/java/net/java/cargotracker/interfaces/handling/file/UploadDirectoryScanner.java) interfaces to register handling events as well as the HTML5/JavaScript client that uses the REST interface and targets mobile devices. You can test against the REST interfaces using our [soapUI tests](https://java.net/projects/cargotracker/sources/svn/show/tags/1.0/src/test/soapui).
+There is a tracking interface to track the current status of cargo and a booking interface to book and route cargo. You should explore both interfaces before diving into the code. You should also check out the [REST](https://github.com/m-reza-rahman/cargo-tracker/blob/master/src/main/java/net/java/cargotracker/interfaces/handling/rest/HandlingReportService.java) and [file processing](https://github.com/m-reza-rahman/cargo-tracker/blob/master/src/main/java/net/java/cargotracker/interfaces/handling/file/UploadDirectoryScanner.java) interfaces to register handling events as well as the mobile web interface. You can test against the REST interfaces using our [soapUI tests](https://github.com/m-reza-rahman/cargo-tracker/tree/master/src/test/soapui).
 
