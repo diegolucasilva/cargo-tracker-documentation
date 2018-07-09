@@ -20,7 +20,7 @@ All of the code is available on GitHub. You can [download it as a zip](https://g
 
 ## Running the Application
 
-The project is Maven based, so you should be able to easily build it or set it up in your favorite IDE. We currently have instructions for NetBeans.
+The project is Maven based, so you should be able to easily build it or set it up in your favorite IDE. We currently have [instructions for NetBeans](netbeans.md).
 
 You can also run the application directly from the Maven command line using Apache Cargo. All you need to is navigate to the project source root and type:
 
