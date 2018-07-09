@@ -2,7 +2,7 @@
 
 ## Screen Cast
 
-Before exploring the code, it may be helpful to view a demo of the application functionality. The video embedded below demos the major functionality of the Cargo Tracker application. It is intended to be a helpful point to start exploring how the application implements Domain-Driven Design (DDD) using Java EE.
+Before exploring the code, it may be helpful to view a demo of the application functionality. The video embedded below demos the major functionality of the Cargo Tracker application. It is intended to be a helpful point to start exploring how the application implements Domain-Driven Design \(DDD\) using Java EE.
 
 The following is the functionality highlighted in the demo:
 
@@ -27,3 +27,4 @@ You can also run the application directly from the Maven command line using Apac
 `mvn package cargo:run`
 
 Once the application starts up, just open up a browser and navigate to [http://localhost:8080/cargo-tracker/](http://localhost:8080/cargo-tracker/).
+
